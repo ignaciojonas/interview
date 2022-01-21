@@ -9,3 +9,4 @@ require 'factory_bot_rails'
 Patient.create(birthdate: "2001-01-01", patient_number: "ABC123")
 
 FactoryBot.create(:screener)
+FactoryBot.create(:option)
