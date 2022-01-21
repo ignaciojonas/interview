@@ -1,0 +1,2 @@
+class ScreenersController < ApplicationController
+end
