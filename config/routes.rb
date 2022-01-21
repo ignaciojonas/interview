@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :scores
   resources :options
   resources :screeners
   resources :check_ins, only: [:new, :create, :show, :update]
