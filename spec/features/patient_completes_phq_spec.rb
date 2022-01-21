@@ -15,7 +15,7 @@ RSpec.feature "A patient checks into the app" do
 
     click_on "Start PHQ screener"
     
-    expect(page).to have_content("Over the past 2 weeks, how often have you been bothered by any of the following problems?")
+    expect(page).to have_content("Over the last 2 weeks, how often have you been bothered by any of the following problems?")
     expect(page).to have_content("Little interest or pleasure in doing things")
     expect(page).to have_content("Not at all")
     expect(page).to have_content("Several days")

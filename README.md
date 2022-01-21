@@ -44,7 +44,7 @@ There's lots of other things we can do, but this is the simplest starting point.
 The form looks like this:
 
 ```
-Over the past 2 weeks, how often have you been bothered by any of the following problems?
+Over the last 2 weeks, how often have you been bothered by any of the following problems?
 
 1. Little interest or pleasure in doing things?
 
