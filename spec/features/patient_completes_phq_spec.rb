@@ -22,11 +22,30 @@ RSpec.feature "A patient checks into the app" do
     expect(page).to have_content("More than half the days")
     expect(page).to have_content("Nearly every day")
   
+    choose("option_#{option1.id}_0")
+
+    click_on "Save"
+
+    expect(page).to have_content "(Score 0)"
+    expect(page).to have_content "Additional screening is not needed"
+  end
+
+  scenario "for a patient with possible depression" do
+    FactoryBot.create(:screener)
+    option1 = FactoryBot.create(:option)
+
+    visit root_path
+
+    click_on "Start check in"
+
+    click_on "Start PHQ screener"
+      
     choose("option_#{option1.id}_2")
 
     click_on "Save"
 
     expect(page).to have_content "(Score 2)"
+    expect(page).to have_content "Additional screening should be completed"
   end
 
 

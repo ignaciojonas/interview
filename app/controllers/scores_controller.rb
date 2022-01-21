@@ -9,6 +9,6 @@ class ScoresController < ApplicationController
         @check_in = CheckIn.find(params['check_in_id'])
         answers = @screener.options.map {|op| params["option_#{op.id}"].to_i}
         Score.create(screener: @screener, check_in: @check_in, score: answers.sum) 
-        redirect_to check_in_url(@check_in)
+        redirect_to check_in_url(@check_in), notice: helpers.high_answers?(answers) ? 'Additional screening should be completed' : 'Additional screening is not needed'
     end
 end
