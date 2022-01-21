@@ -1,0 +1,12 @@
+<p><%=@screener.question%></p>
+<% @screener.options.each do |option|%>
+<h2><%=option.name%></h2>
+<ul>
+<% option.answers.each do |answer, value| %>
+  <li>
+    <%= radio_button_tag "option_#{option.id}", value%>
+    <%= label_tag "option_#{option.id}", answer%>
+  </li>
+  <%end%>
+</ul>
+<%end%>

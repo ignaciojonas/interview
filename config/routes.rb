@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :scores
-  resources :options
-  resources :screeners
-  resources :check_ins, only: [:new, :create, :show, :update]
-  get 'phq_screener', to: 'check_ins#phq_screener'
+  resources :check_ins, only: [:new, :create, :show, :update] do
+    resources :screeners do 
+      resources :scores
+      resources :options
+    end
+  end
+  
   root to: "check_ins#new"
 end

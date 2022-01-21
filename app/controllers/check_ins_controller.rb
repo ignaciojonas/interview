@@ -16,6 +16,4 @@ class CheckInsController < ApplicationController
     redirect_to new_check_in_path
   end
 
-  def phq_screener
-  end
 end
