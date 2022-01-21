@@ -1,12 +1,15 @@
 <p><%=@screener.question%></p>
-<% @screener.options.each do |option|%>
-<h2><%=option.name%></h2>
-<ul>
-<% option.answers.each do |answer, value| %>
-  <li>
-    <%= radio_button_tag "option_#{option.id}", value%>
-    <%= label_tag "option_#{option.id}", answer%>
-  </li>
+<%= form_tag check_in_screener_scores_path, method: :post do  %>
+  <% @screener.options.each do |option|%>
+  <h2><%=option.name%></h2>
+  <ul>
+    <% option.answers.each do |answer, value| %>
+    <li>
+      <%= radio_button_tag "option_#{option.id}", value%>
+      <%= label_tag "option_#{option.id}", answer%>
+    </li>
+    <%end%>
+  </ul>
   <%end%>
-</ul>
+  <%= submit_tag 'Save'%>
 <%end%>

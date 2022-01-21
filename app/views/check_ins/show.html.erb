@@ -1,7 +1,7 @@
 <p>Please complete all of the steps on this page:</p>
 <ul>
 <% Screener.all.each do |screener|%>
-  <li><%= link_to "Start #{screener.name} screener", new_check_in_screener_score_path(@check_in, screener) %></li>
+  <li><%= link_to "Start #{screener.name} screener", new_check_in_screener_score_path(@check_in, screener) %> (<%=@check_in.score(screener).nil? ? 'Not Taken' : "Score #{@check_in.score(screener).score}"%>)</li>
   <% end %>
 </ul>
 <%= form_for(:check_in, url: check_in_path, method: :put, id: 1) do |f| %>
